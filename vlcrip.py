@@ -99,6 +99,7 @@ class VLCRipperApp(App):
             ]
             subprocess.run(cmd, check=True)
             self.query_one("#status").update(f"Successfully ripped DVD to: {output_path}")
+            self.query_one("#filename").update("")
         except subprocess.CalledProcessError:
             self.query_one("#status").update("Error occurred while ripping DVD!")
         except Exception as e:
