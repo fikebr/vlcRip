@@ -1,0 +1,30 @@
+# VLC DVD Ripper
+
+## Description
+
+create a python script that replaces the following batch file.
+
+```
+@echo off
+
+title Rip VLC
+
+set vlc="E:\PortableApps\PortableApps\VLCPortable\App\vlc\vlc.exe"
+set folder=G:\Movies\SesameStreetDVDs\
+set file=celebrate_family_full.mp4
+
+
+set exe=%vlc% dvdsimple:///d: --sout "#standard{access=file,mux=ts,dst=%folder%%file%}" vlc://quit
+
+echo %exe%
+%exe%
+
+title Rip VLC - Complete
+```
+
+## Requirements
+
+1. use the module "textual" to create a terminal interface.
+2. use an input filed to prompt the user for the filename
+3. store the path to vlc.exe and the output folder in a toml based config file
+4. make the tui interface look professional and unique
